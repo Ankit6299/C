@@ -1,13 +1,7 @@
 #include <stdio.h>
 
 void main() {
-    int arr[5] = {27,7,2,1,59};
-    int position = 3;
-    int element = 30;
+    arr[5] = {1,2,3,4,5};
 
-    for (int i=0;i<5;i++) {
-        if (arr[i] = position){
-            arr[i] = element
-        }
-    }
+    
 }
