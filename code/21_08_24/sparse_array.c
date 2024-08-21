@@ -1,55 +1,44 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <stdio.h>
 
-int main()
-{
-    int a[5][6] = {{0,0,7,0,0,0},{0,0,0,0,0,0},{0,0,0,5,9,0},{0,0,0,0,0,0},{0,2,0,0,0,0}};
-    int s[5][3];
+int main() {
+    int a[5][6] = {
+        {0, 0, 7, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 5, 9, 0},
+        {0, 0, 0, 0, 0, 0},
+        {0, 2, 0, 0, 0, 0}
+    };
     
-    // for (int i=0;i<5;i++) {
-    //     for (int j=0;j<6;j++) {
-    //         printf("%d",a[i][j]);
-    //         if (j==5) {
-    //             printf("\n");
-    //         }
-    //     }
-    // }
-    // for (int i=0;i<4;i++) {
-    //     for (int j=0;j<3;j++) {
-    //         if (a[i][j]!=0){
-    //             printf("%d",a[i][j]);
-    //             // if (j==2){
-    //             //     printf("\n");
-    //             // }
-    //         }
-    //     }
-    // }
-    int k=0; 
-    for(int i=0; i<4; i++)  
-    {  
-        for(int j=0; j<5; j++)  
-        {  
-            if(a[i][j]!=0)  
-            {  
-                s[0][k] = i;  
-                s[1][k] = j;  
-                s[2][k] = s[i][j];  
-                k++;
-            }  
-      }  
-    }
-    
-    for (int i=0;i<4;i++) {
-        for (int j=0;j<3;j++) {
-            printf("%d",s[i][j]);
+    // Count non-zero elements
+    int count = 0;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (a[i][j] != 0) {
+                count++;
             }
         }
+    }
+
+    // Create a sparse matrix representation (row, column, value)
+    int sparse[count][3];
+    int k = 0;
+    
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (a[i][j] != 0) {
+                sparse[k][0] = i;      // Row index
+                sparse[k][1] = j;      // Column index
+                sparse[k][2] = a[i][j]; // Value
+                k++;
+            }
+        }
+    }
+
+    // Print sparse matrix representation
+    printf("Sparse matrix representation (row, column, value):\n");
+    for (int i = 0; i < count; i++) {
+        printf("%d %d %d\n", sparse[i][0], sparse[i][1], sparse[i][2]);
+    }
+
     return 0;
 }
