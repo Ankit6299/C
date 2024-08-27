@@ -9,7 +9,7 @@ int main() {
         {0, 2, 0, 0, 0, 0}
     };
     
-    // Count non-zero elements
+    // Count non-zero elements [value]
     int count = 0;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 6; j++) {
@@ -36,6 +36,8 @@ int main() {
 
     // Print sparse matrix representation
     printf("Sparse matrix representation (row, column, value):\n");
+    printf("R C V\n");
+    printf("5 6 %d\n",count);
     for (int i = 0; i < count; i++) {
         printf("%d %d %d\n", sparse[i][0], sparse[i][1], sparse[i][2]);
     }
