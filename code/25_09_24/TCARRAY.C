@@ -7,15 +7,15 @@ int main() {
     int count2=0;
 
     for(i = 0; i < 6; i++) {
-	for(j = 0; j < 6; j++) {
-	    if(j < 6 - i) {
-		a[i][j] = j + 1;
-		count++;
-	    } else {
-		a[i][j] = 0;
-		count2++;
-	    }
-	}
+        for(j = 0; j < 6; j++) {
+            if(j < 6 - i) {
+            a[i][j] = j + 1;
+            count++;
+            } else {
+            a[i][j] = 0;
+            count2++;
+            }
+        }
     }
 
     for(i = 0; i < 6; i++) {
