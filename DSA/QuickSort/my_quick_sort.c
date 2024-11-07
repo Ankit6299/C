@@ -11,7 +11,7 @@ int partition(int arr[], int low, int high){
     int j = high;
 
     while(i<j){
-        while(arr[i] < pivot && i <= high-1){
+        while(arr[i] <= pivot && i <= high-1){ // 
             i++;
         }
         while(arr[j] > pivot && j >= low+1){
@@ -39,13 +39,13 @@ int main(){
     int size = 5;
 
     for(int i=0;i<size;i++){
-        printf("%d",arr[i]);
+        printf("%d ",arr[i]);
     }
 
     qs(arr,0,size-1);
-
+    printf("\n");
     for(int i=0;i<size;i++){
-        printf("%d",arr[i]);
+        printf("%d ",arr[i]);
     }
     return 0;
 }
